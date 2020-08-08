@@ -6,6 +6,8 @@ filetype plugin indent on
 syntax on
 syntax enable
 
+let g:javascript_plugin_jsdoc = 1
+
 set relativenumber
 set cursorline
 set incsearch
@@ -19,15 +21,14 @@ set omnifunc=syntaxcomplete#Complete
 
 set ttyfast
 
-call plug#begin('~/.vim/autoload')
+call plug#begin('~/.vim/plugged')
 Plug('https://github.com/pangloss/vim-javascript.git')
 Plug('https://github.com/ap/vim-css-color.git')
 Plug('https://github.com/lilydjwg/colorizer.git')
 Plug 'prettier/vim-prettier', {
-   'do': 'yarn install',
-   'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-Plug 'mattn/emmet-vim'
+    \ 'do': 'yarn install',
+    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug('mattn/emmet-vim')
 call plug#end()
  
-let g:javascript_plugin_jsdoc = 1
 
