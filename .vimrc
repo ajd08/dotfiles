@@ -26,6 +26,7 @@ Plug('https://github.com/lilydjwg/colorizer.git')
 Plug 'prettier/vim-prettier', {
    'do': 'yarn install',
    'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'mattn/emmet-vim'
 call plug#end()
  
 let g:javascript_plugin_jsdoc = 1
