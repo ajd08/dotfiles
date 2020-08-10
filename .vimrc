@@ -31,4 +31,10 @@ Plug 'prettier/vim-prettier', {
 Plug('mattn/emmet-vim')
 call plug#end()
  
-
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
