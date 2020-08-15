@@ -29,6 +29,7 @@ Plug 'prettier/vim-prettier', {
     \ 'do': 'yarn install',
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug('mattn/emmet-vim')
+Plug('https://github.com/ycm-core/YouCompleteMe.git')
 call plug#end()
  
 inoremap " ""<left>
@@ -38,3 +39,5 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
+
+autocmd BufNewFile *.cpp -r ~/cp/template.cpp
