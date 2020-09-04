@@ -272,5 +272,20 @@ exec_always compton -f
 exec_always --no-startup-id  ~/.config/polybar/launch.sh
 
 
-
+# redshift modes
+bindsym $mod+Shift+s mode "$mode_redshift"
+set $mode_redshift Set colour temperature: (a)uto, (r)eset, (2)500K, (3)000K, (4)000K, (5)000K
+set $kill_redshift pkill -9 redshift;
+mode "$mode_redshift" {
+    bindsym a exec --no-startup-id "$kill_redshift redshift -t 5000:4000", mode "default"
+    bindsym r exec --no-startup-id "$kill_redshift redshift -x", mode "default"
+    bindsym 2 exec --no-startup-id "$kill_redshift redshift -O 2500 -b 0.6", mode "default"
+    bindsym 3 exec --no-startup-id "$kill_redshift redshift -O 3000 -b 0.8" mode "default"
+    bindsym 4 exec --no-startup-id "$kill_redshift redshift -O 3000 -b 0.9" mode "default"
+    bindsym 5 exec --no-startup-id "$kill_redshift redshift -O 3000 -b 1.0" mode "default"
+ 
+    # exit mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
