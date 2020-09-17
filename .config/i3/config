@@ -270,6 +270,7 @@ exec_always xrandr --output HDMI-1 --primary --mode 2560x1080 --pos 0x0 --rotate
 exec_always pulseaudio --start
 exec_always compton -f
 exec_always --no-startup-id  ~/.config/polybar/launch.sh
+exec_always pulseaudio -k && sudo alsa force-reload
 
 
 # redshift modes
