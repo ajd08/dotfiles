@@ -270,6 +270,7 @@ exec_always xrandr --output HDMI-1 --primary --mode 2560x1080 --pos 0x0 --rotate
 exec_always pulseaudio --start
 exec_always compton -f
 exec_always --no-startup-id  ~/.config/polybar/launch.sh
+exec_always pulseaudio -k && sudo alsa force-reload
 
 
 # redshift modes
@@ -283,6 +284,19 @@ mode "$mode_redshift" {
     bindsym 3 exec --no-startup-id "$kill_redshift redshift -O 3000 -b 0.8" mode "default"
     bindsym 4 exec --no-startup-id "$kill_redshift redshift -O 3000 -b 0.9" mode "default"
     bindsym 5 exec --no-startup-id "$kill_redshift redshift -O 3000 -b 1.0" mode "default"
+ 
+    # exit mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# monitor screen layout 
+bindsym $mod+Shift+a mode "$mode_screen"
+set $mode_screen Set screen layout: (1)internal, (2)hdmi, (3)both
+mode "$mode_screen" {
+    bindsym 1 exec --no-startup-id "xrandr --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off; exec feh --bg-fill ~/Pictures/lava-tree.jpg", mode "default"
+    bindsym 2 exec --no-startup-id "xrandr --output HDMI-1 --primary --mode 2560x1080 --pos 0x0 --rotate normal --output eDP-1 --off; exec feh --bg-fill ~/Pictures/pond.png", mode "default"
+    bindsym 3 exec --no-startup-id "xrandr --output HDMI-1 --primary --mode 2560x1080 --pos 0x0 --rotate normal --output DP-1 --off --output eDP-1 --mode 1920x1080 --pos 2560x0 --rotate normal --output DP-2 --off; exec feh --bg-fill ~/Pictures/pond.png", mode "default"
  
     # exit mode: "Enter" or "Escape"
     bindsym Return mode "default"
