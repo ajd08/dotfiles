@@ -1,6 +1,6 @@
 packloadall
 
-filetype plugin indent on
+filetype off
 
 syntax on
 syntax enable
@@ -17,8 +17,24 @@ set shiftwidth=4
 set expandtab
 set wildmenu
 set omnifunc=syntaxcomplete#Complete
-
 set ttyfast
+set nocompatible
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+""VIM PLUG CONFIG
 call plug#begin('~/.vim/plugged')
 Plug('https://github.com/pangloss/vim-javascript.git')
 Plug('https://github.com/ap/vim-css-color.git')
@@ -27,6 +43,7 @@ Plug 'prettier/vim-prettier', {
     \ 'do': 'yarn install',
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug('mattn/emmet-vim')
+Plug('Valloric/YouCompleteMe')
 Plug('https://github.com/tpope/vim-surround.git')
 call plug#end()
 
