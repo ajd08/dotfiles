@@ -8,6 +8,7 @@ syntax enable
 let g:javascript_plugin_jsdoc = 1
 
 set exrc
+set noerrorbells
 set relativenumber
 set hidden
 set nu
@@ -20,9 +21,10 @@ set incsearch
 set scrolloff=8
 set signcolumn=yes
 set autoindent
-set tabstop=4
+set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
+set smartindent
 set wildmenu
 set omnifunc=syntaxcomplete#Complete
 set ttyfast
@@ -46,6 +48,7 @@ filetype plugin indent on    " required
 call plug#begin('~/.vim/plugged')
 Plug('junegunn/fzf'), {'do': { -> fzf#install() } }
 Plug('junegunn/fzf.vim')
+Plug('stsewd/fzf-checkout.vim')
 Plug('https://github.com/pangloss/vim-javascript.git')
 Plug('https://github.com/ap/vim-css-color.git')
 Plug('https://github.com/lilydjwg/colorizer.git')
@@ -77,7 +80,16 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 ""inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
-let leader=" "
+let mapleader=" "
+
+nmap <leader>gj :diffget //3<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gs :G<CR>
+nnoremap <leader>gc :GCheckout<CR>
+
+let g:fzf_layout = {'window': { 'width' : 0.8, 'height': 0.8 } }
+let $FZF_DEFAULT_OPTS='--reverse'
+
 
 ""shortcuts to make and run c++ files
 " autocmd FileType cpp nnoremap   <leader>rm    :set makeprg=g++<CR>:make % -o %:r<CR>
