@@ -89,16 +89,13 @@ nnoremap <c-p> :Files<cr>
 autocmd Filetype typescript,typescriptreact :call GoYCM()
 autocmd Filetype cpp,cxx,h,hpp,c :call GoCoc()
 
-
 let g:fzf_layout = {'window': { 'width' : 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 
-
-""shortcuts to make and run c++ files
+""shortcuts to make and run c++ files Competitive programming purposes
 " autocmd FileType cpp nnoremap   <leader>rm    :set makeprg=g++<CR>:make % -o %:r<CR>
 autocmd FileType cpp nnoremap     <leader>rr    :!./%:r<CR>
 autocmd FileType cpp nnoremap     <leader>rt    :!for f in %:r.*.test; do echo "TEST: $f"; ./%:r < $f; done<CR>
-
 autocmd BufNewFile *.cpp -r ~/cp/template.cpp
 
 
