@@ -16,7 +16,7 @@ set noswapfile
 set nobackup
 set hlsearch
 set scrolloff=8
-set signcolumn=yes
+set signcolumn=no
 set autoindent
 set tabstop=4 softtabstop=4
 set shiftwidth=4
