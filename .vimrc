@@ -57,15 +57,28 @@ let mapleader=" "
 " FILE BROWSING:
 inoremap {;<CR> {<CR>};<ESC>O
 
+" WINDOW MOVEMENT:
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+
+" split window
+nmap ss :split<Return><C-w>w
+nmap sv :vsplit<Return><C-w>w
+
+" resize window
+nnoremap <silent> <Leader>+ :vertical resize +5<CR>
+nnoremap <silent> <Leader>- :vertical resize -5<CR>
+nnoremap <silent> <Leader>> :resize +5<CR>
+nnoremap <silent> <Leader>< :resize -5<CR>
+
+" BUFFER NAVIGATION:
 nnoremap <C-k> :bprev<CR>
 nnoremap <C-j> :bnext<CR>
 nnoremap <C-q> :bdelete<CR>
+
 nnoremap <leader>u :UndotreeShow<CR>
-nnoremap <leader>pv :Sex!<CR>
 
 " for copying
 nnoremap <leader>y "+y
@@ -95,24 +108,26 @@ endfun
 ""endfun
 
 
-nnoremap <silent> <Leader>+ :vertical resize +5<CR>
-nnoremap <silent> <Leader>- :vertical resize -5<CR>
+ 
+"VIM FUGITIVE:
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
 nmap <leader>gs :G<CR>
 nnoremap <leader>gc :GCheckout<CR>
 nnoremap <c-p> :Files<cr>
 
-autocmd Filetype typescript,typescriptreact :call GoYCM()
-""autocmd Filetype cpp,cxx,h,hpp,c :call GoCoc()
 
+"FUZZY FINDER LAYOUT:
 let g:fzf_layout = {'window': { 'width' : 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 
-""shortcuts to make and run c++ files Competitive programming purposes
+"C++ COMPETITIVE PROGRAMMING SHORTCUTS:
 autocmd FileType cpp nnoremap   <leader>rm    :set makeprg=g++<CR>:make % -o %:r<CR>
 autocmd FileType cpp nnoremap     <leader>rr    :!./%:r<CR>
 autocmd FileType cpp nnoremap     <leader>rt    :!for f in %:r.*.test; do echo "TEST: $f"; ./%:r < $f; done<CR>
 autocmd BufNewFile *.cpp -r ~/cp/template.cpp
 
+"INTELLISENSE:
+autocmd Filetype typescript,typescriptreact :call GoYCM()
+""autocmd Filetype cpp,cxx,h,hpp,c :call GoCoc()
 
