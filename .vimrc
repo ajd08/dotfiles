@@ -46,7 +46,8 @@ Plug('https://github.com/tpope/vim-surround.git')
 Plug('tpope/vim-fugitive')
 Plug('vim-airline/vim-airline')
 Plug ('vim-airline/vim-airline-themes')
-Plug('mbbill/undotree')
+Plug ('jiangmiao/auto-pairs')
+
 call plug#end()
 
 let g:airline_theme='night_owl'
@@ -58,10 +59,10 @@ let mapleader=" "
 inoremap {;<CR> {<CR>};<ESC>O
 
 " WINDOW MOVEMENT:
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
+nnoremap sh :wincmd h<CR>
+nnoremap sj :wincmd j<CR>
+nnoremap sk :wincmd k<CR>
+nnoremap sl :wincmd l<CR>
 
 " split window
 nmap ss :split<Return><C-w>w
