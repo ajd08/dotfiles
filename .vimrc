@@ -34,6 +34,7 @@ Plug('junegunn/fzf.vim')
 Plug('stsewd/fzf-checkout.vim')
 Plug('https://github.com/pangloss/vim-javascript.git')
 Plug('https://github.com/leafgarland/typescript-vim.git')
+Plug ('scrooloose/nerdtree')
 Plug('https://github.com/ap/vim-css-color.git')
 Plug('https://github.com/lilydjwg/colorizer.git')
 Plug('vim-utils/vim-man')
@@ -47,6 +48,7 @@ Plug('tpope/vim-fugitive')
 Plug('vim-airline/vim-airline')
 Plug ('vim-airline/vim-airline-themes')
 Plug ('jiangmiao/auto-pairs')
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 call plug#end()
 
@@ -116,6 +118,9 @@ nmap <leader>gf :diffget //2<CR>
 nmap <leader>gs :G<CR>
 nnoremap <leader>gc :GCheckout<CR>
 nnoremap <c-p> :Files<cr>
+
+"NERD TREE:
+nnoremap <leader>n :NERDTreeFocus<CR>
 
 
 "FUZZY FINDER LAYOUT:
