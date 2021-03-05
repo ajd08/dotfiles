@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "21/02/2021, 12:56:32",
-	"time": 1613930192612,
+	"@time": "04/03/2021, 12:36:03",
+	"time": 1614879363305,
 	"environment": {
 		"extension": "1.88.2",
 		"platform": "linux",
-		"chrome": 88
+		"chrome": 89
 	},
 	"nextPatterns": "$base64:5LiL5LiA5bCBLOS4i+mhtSzkuIvkuIDpobUs5LiL5LiA56ugLOWQjuS4gOmhtSxuZXh0LG1vcmUsbmV3ZXIsPizigLos4oaSLMK7LOKJqyw+PmJhY2tncm91bmQ=",
 	"omniBlockList": "$base64:bw==",
