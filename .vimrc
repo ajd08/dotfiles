@@ -37,7 +37,6 @@ Plug('https://github.com/leafgarland/typescript-vim.git')
 Plug ('scrooloose/nerdtree')
 Plug('https://github.com/ap/vim-css-color.git')
 Plug('https://github.com/lilydjwg/colorizer.git')
-Plug('vim-utils/vim-man')
 Plug 'prettier/vim-prettier', {
     \ 'do': 'yarn install',
     \ 'for': ['javascript', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
@@ -46,9 +45,8 @@ Plug('Valloric/YouCompleteMe')
 Plug('https://github.com/tpope/vim-surround.git')
 Plug('tpope/vim-fugitive')
 Plug('vim-airline/vim-airline')
-Plug ('vim-airline/vim-airline-themes')
-Plug ('jiangmiao/auto-pairs')
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+Plug('vim-airline/vim-airline-themes')
+Plug('jiangmiao/auto-pairs')
 
 call plug#end()
 
@@ -61,10 +59,10 @@ let mapleader=" "
 inoremap {;<CR> {<CR>};<ESC>O
 
 " WINDOW MOVEMENT:
-nnoremap sh :wincmd h<CR>
-nnoremap sj :wincmd j<CR>
-nnoremap sk :wincmd k<CR>
-nnoremap sl :wincmd l<CR>
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
 
 " split window
 nmap ss :split<Return><C-w>w
