@@ -47,6 +47,7 @@ Plug('tpope/vim-fugitive')
 Plug('vim-airline/vim-airline')
 Plug('vim-airline/vim-airline-themes')
 Plug('jiangmiao/auto-pairs')
+Plug('https://github.com/jlcrochet/vim-razor.git')
 
 call plug#end()
 
@@ -109,7 +110,14 @@ endfun
 ""endfun
 
 
- 
+"TELESCOPE:
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+
 "VIM FUGITIVE:
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
